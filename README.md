@@ -1,4 +1,4 @@
-# AI Assistant Project (THIS PROJECT IS IN PROGRESS: ADDING DICKER, CHROMADB, AND FASTAPI FOR BETTER EXPERIENCE)
+# AI Assistant Project (THIS PROJECT IS IN PROGRESS: ADDING DOCKER, CHROMADB, AND FASTAPI FOR BETTER EXPERIENCE)
 
 A local AI assistant for the terminal with web search and persistent memory, powered by [Ollama](https://ollama.com).
 
