@@ -1,9 +1,9 @@
 from openai import OpenAI
 from memory import load_memory, save_memory, clear_memory
-from functions.search import search, fetch_page
+from vector_memory import store_memory, search_memory
+from functions.search import search
 
 client = OpenAI(base_url="http://localhost:11434/v1", api_key="ollama")
-
 
 def stream_response(messages):
     response = client.chat.completions.create(
@@ -11,7 +11,6 @@ def stream_response(messages):
         messages=messages,
         stream=True
     )
-
     print("\nAssistant: ", end="", flush=True)
     reply = ""
     for chunk in response:
@@ -50,6 +49,8 @@ while True:
             reply = stream_response(search_messages)
             messages.append({"role": "user", "content": query})
             messages.append({"role": "assistant", "content": reply})
+            store_memory("user", query)
+            store_memory("assistant", reply)
             save_memory(messages)
         except Exception as e:
             print(f"\nError: {e}\n")
@@ -60,6 +61,8 @@ while True:
         try:
             reply = stream_response(messages)
             messages.append({"role": "assistant", "content": reply})
+            store_memory("user", user_input)
+            store_memory("assistant", reply)
             save_memory(messages)
         except Exception as e:
             print(f"\nError: {e}\n")
