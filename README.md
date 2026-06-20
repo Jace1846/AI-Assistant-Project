@@ -70,6 +70,7 @@ pip install openai duckduckgo-search requests beautifulsoup4
 **Memory** — every user message and assistant reply is appended to a list and written to `memory.json`. On startup, this file is read back in and passed as the full message history to Ollama, giving the model persistent context across sessions.
 
 **Model** — the assistant uses Ollama's OpenAI-compatible API endpoint (`http://localhost:11434/v1`), so swapping models is as simple as changing the model string in `main.py`.
+**Additional Notes** - you must run ollama serve in a seperate terminal to start. yeah ill figure out how to automate that later.
 
 ## Configuration
 
