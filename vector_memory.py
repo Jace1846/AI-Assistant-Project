@@ -6,10 +6,10 @@ import os
 os.environ["TRANSFORMERS_OFFLINE"] = "1"
 os.environ["HF_DATASETS_OFFLINE"] = "1"
 
-# load the embedding model locally
+# Loading my enbedding model
 embedder = SentenceTransformer("all-MiniLM-L6-v2")
 
-# create a local ChromaDB client
+# creating my local client
 client = chromadb.PersistentClient(path="./chroma_db")
 collection = client.get_or_create_collection("memories")
 
