@@ -1,3 +1,5 @@
+####This was really hard. make sure to read up and understand befor changing stuff#####
+
 import chromadb
 from sentence_transformers import SentenceTransformer
 import os
