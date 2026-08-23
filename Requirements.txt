@@ -1,4 +1,4 @@
-openai
+openai/Qwen/Gamma (were all tested)
 ddgs
 requests
 beautifulsoup4
